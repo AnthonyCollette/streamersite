@@ -26,19 +26,28 @@ export default {
 
 <style lang="scss" scoped>
 .twitter {
-	// display: flex;
-	// justify-content: center;
-	// margin-bottom: 200px;
-	position: absolute;
-	left: 50px;
-	top: 300px;
+	margin-bottom: 200px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	@include min($xxxl) {
+		position: absolute;
+		left: 50px;
+		top: 300px;
+	}
 	.upper-twitter {
 		position: absolute;
 		bottom: 102%;
-		left: 60%;
+		left: 10%;
 		display: flex;
 		align-items: flex-start;
 		transform: rotate(-10deg);
+		@include min($sm) {
+			left: 50%;
+		}
+		@include min($xxxl) {
+			left: 60%;
+		}
 		img {
 			transform: rotate(90deg) scaleY(-1);
 			width: 100px;

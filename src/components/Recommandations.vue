@@ -2,13 +2,13 @@
 	<div class="recommandations">
 		<h2>Les potos</h2>
 		<ul>
-			<li v-for="(item, index) in recommandation" :key="index">
-				<a :href="recommandation[index].url" target="_blank">
+			<li v-for="(item, index) in friends" :key="index">
+				<a :href="friends[index].url" target="_blank">
 					<div class="img-wrapper">
-						<img :src="recommandation[index].src" />
+						<img :src="friends[index].image" />
 					</div>
 					<span>
-						{{ recommandation[index].name }}
+						{{ friends[index].name }}
 					</span>
 				</a>
 			</li>
@@ -19,51 +19,8 @@
 <script>
 export default {
 	name: 'Recommandations',
-	data() {
-		return {
-			recommandation: [
-				{
-					name: 'Daevas Fashion',
-					src: './images/image1.png',
-					url: 'https://www.twitch.tv/naginatafr',
-				},
-				{
-					name: 'Animesan1678',
-					src: './images/image2.png',
-					url: 'https://www.twitch.tv/daevasfashion',
-				},
-				{
-					name: 'NaginataFR',
-					src: './images/image3.png',
-					url: 'https://www.twitch.tv/animesan1678',
-				},
-				{
-					name: 'Ysallyra_',
-					src: './images/image4.png',
-					url: 'https://www.twitch.tv/ysallyra_',
-				},
-				{
-					name: 'Dasheur',
-					src: './images/image5.png',
-					url: 'https://www.twitch.tv/dasheur',
-				},
-				{
-					name: 'druaga300',
-					src: './images/image6.png',
-					url: 'https://www.twitch.tv/druaga300',
-				},
-				{
-					name: 'vorondil_svitkona',
-					src: './images/image7.png',
-					url: 'https://www.twitch.tv/vorondil_svitkona',
-				},
-				{
-					name: 'TheHumanTorchtipede',
-					src: './images/image8.png',
-					url: 'https://www.twitch.tv/thehumantorchtipede',
-				},
-			],
-		}
+	props: {
+		friends: Array,
 	},
 }
 </script>

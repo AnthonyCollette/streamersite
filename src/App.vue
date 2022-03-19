@@ -9,10 +9,6 @@
 	box-sizing: border-box;
 	transition: 0.4s;
 }
-.container {
-	max-width: 1400px;
-	margin: 0 auto;
-}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -147,6 +143,26 @@ a {
 	text-decoration: none;
 }
 
+.container {
+	width: 80%;
+	margin: 0 auto;
+	@include min($sm) {
+		width: 540px;
+	}
+	@include min($md) {
+		width: 720px;
+	}
+	@include min($lg) {
+		width: 960px;
+	}
+	@include min($xl) {
+		width: 1140px;
+	}
+	@include min($xxl) {
+		width: 1320px;
+	}
+}
+
 // TYPOGRAPHY
 
 @font-face {
@@ -155,13 +171,44 @@ a {
 }
 
 h1 {
-	font-family: 'OPTI';
-	font-size: 80px;
-	letter-spacing: 50px;
+	font-family: 'Kalam', cursive;
+	font-size: 30px;
+	letter-spacing: 10px;
+	line-height: 150%;
+	text-align: center;
+	@include min($sm) {
+		font-size: 50px;
+	}
+	@include min($lg) {
+		font-size: 80px;
+		text-align: left;
+	}
 }
 h2 {
-	font-family: 'OPTI';
-	font-size: 5em;
-	letter-spacing: 10px;
+	font-family: 'Kalam', cursive;
+	font-size: 40px;
+	text-align: center;
+	@include min($sm) {
+		font-size: 60px;
+	}
+}
+h3 {
+	font-family: $font-002;
+	font-size: 28px;
+}
+
+h4 {
+	font-family: $font-002;
+	font-size: 16px;
+}
+
+p {
+	font-family: $font-002;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+body {
+	overflow-x: hidden;
 }
 </style>
